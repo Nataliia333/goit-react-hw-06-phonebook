@@ -24,7 +24,7 @@ const ContactForm = ({ contacts, onAdd }) => {
   };
 
   return (
-    <form className={styles.form}>
+    <form className={styles.ContactForm}>
       <label>Name</label>
       <input type="text" onChange={onInputChange} id="name"></input>
       <label>Number</label>

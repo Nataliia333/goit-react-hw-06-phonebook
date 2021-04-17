@@ -1,5 +1,6 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
+// import { connect } from 'react-redux';
 // import { combineReducers } from "redux";
 import {
   persistStore,

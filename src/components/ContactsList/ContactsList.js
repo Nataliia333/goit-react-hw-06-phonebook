@@ -12,7 +12,7 @@ const ContactsList = ({ filter, contacts, onDelete, onClose }) => {
 
   const handlerDelete = event => {
     onDelete(event.currentTarget.id);
-    onClose();
+    // onClose();
   };
 
   return (
