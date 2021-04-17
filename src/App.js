@@ -54,25 +54,25 @@ export default class App extends Component {
   //   }
   // }
 
-  componentDidMount() {
-    window.addEventListener('keydown', this.handleKeyDown);
-  }
+  // componentDidMount() {
+  //   window.addEventListener('keydown', this.handleKeyDown);
+  // }
 
-  componentWillUnmount() {
-    window.removeEventListener('keydown', this.handleKeyDown);
-  }
+  // componentWillUnmount() {
+  //   window.removeEventListener('keydown', this.handleKeyDown);
+  // }
 
-  handleKeyDown = event => {
-    if (event.code === 'Escape') {
-      this.props.onClose();
-    }
-  };
+  // handleKeyDown = event => {
+  //   if (event.code === 'Escape') {
+  //     this.props.onClose();
+  //   }
+  // };
 
-  handleBackdropClick = event => {
-    if (event.target === event.currentTarget) {
-      this.props.onClose();
-    }
-  };
+  // handleBackdropClick = event => {
+  //   if (event.target === event.currentTarget) {
+  //     this.props.onClose();
+  //   }
+  // };
   render() {
     // const { filter } = this.state;
     // const visibleContacts = this.getVisibleContacts();

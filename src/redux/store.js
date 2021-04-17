@@ -15,7 +15,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 import contactsReducer from './contacts/contacts-reducer';
 
-const contactsPersistConfige = {
+const contactsPersistConfig = {
   key: 'contacts',
   storage,
   blacklist: ['filter'],
@@ -32,7 +32,7 @@ const middleware = [
 
 const store = configureStore({
   reducer: {
-    contacts: persistReducer(contactsPersistConfige, contactsReducer),
+    contacts: persistReducer(contactsPersistConfig, contactsReducer),
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',

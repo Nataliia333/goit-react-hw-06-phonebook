@@ -5,8 +5,12 @@ import actions from '../../redux/contacts/contacts-actions';
 const Filter = ({ updateFilter }) => {
   return (
     <div>
-      <p>Find contacts by name</p>
-      <input type="text" onChange={updateFilter} id="find"></input>
+      <input
+        type="text"
+        onChange={updateFilter}
+        id="find"
+        placeholder="Enter name for Search"
+      ></input>
     </div>
   );
 };

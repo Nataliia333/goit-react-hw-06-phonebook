@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import actions from '../../redux/contacts/contacts-actions';
+import styles from './ContactsList.module.css';
 
-const ContactsList = ({ filter, contacts, onDelete, onClose }) => {
+const ContactsList = ({ filter, contacts, onDelete }) => {
   const onFilterContacts = () => {
     const filterContacts = contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase()),
@@ -11,8 +12,10 @@ const ContactsList = ({ filter, contacts, onDelete, onClose }) => {
   };
 
   const handlerDelete = event => {
-    onDelete(event.currentTarget.id);
-    // onClose();
+    onDelete(event.target.id);
+    console.log(event.target.id);
+
+    // console.log(event.currentTarget.id);
   };
 
   return (
@@ -20,7 +23,14 @@ const ContactsList = ({ filter, contacts, onDelete, onClose }) => {
       {(filter ? onFilterContacts() : contacts).map(({ id, name, number }) => (
         <li key={id}>
           {name}: {number}
-          <button onClick={handlerDelete}>Delete</button>
+          <button
+            id={id}
+            className={styles.ContactButton}
+            type="button"
+            onClick={handlerDelete}
+          >
+            Delete
+          </button>
         </li>
       ))}
     </ul>
@@ -42,7 +52,6 @@ ContactsList.propTypes = {
   filter: PropTypes.string,
   contacts: PropTypes.arrayOf(PropTypes.object),
   onDelete: PropTypes.func.isRequired,
-  onClose: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchProps)(ContactsList);
